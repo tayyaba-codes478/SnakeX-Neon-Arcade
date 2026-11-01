@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SnakeX | Neon Arcade</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="background-glow glow-one"></div>
+  <div class="background-glow glow-two"></div>
+
+  <main class="app">
+
+    <header class="topbar">
+      <a href="#" class="logo">🐍 Snake<span>X</span></a>
+      <div class="status">
+        <span class="status-dot"></span>
+        ARCADE MODE
+      </div>
+    </header>
+
+    <section class="hero">
+      <p class="eyebrow">✦ THE CLASSIC REIMAGINED ✦</p>
+      <h1>NEON <span>SNAKE</span></h1>
+      <p class="subtitle">Eat. Grow. Survive. Beat your high score.</p>
+    </section>
+
+    <section class="game-layout">
+
+      <div class="game-card">
+
+        <div class="game-header">
+          <div>
+            <p class="small-label">CURRENT SCORE</p>
+            <h2 id="score">000</h2>
+          </div>
+
+          <div class="player-info">
+            <p class="small-label">PLAYER</p>
+            <h3 id="playerDisplay">Player</h3>
+          </div>
+
+          <div class="best-score">
+            <p class="small-label">BEST SCORE</p>
+            <h3 id="highScore">000</h3>
+          </div>
+        </div>
+
+        <div class="canvas-wrap">
+          <canvas id="gameCanvas" width="600" height="600"></canvas>
+
+          <div class="overlay" id="overlay">
+            <div class="overlay-content">
+              <div class="overlay-icon" id="overlayIcon">🐍</div>
+              <p class="overlay-tag">WELCOME TO SNAKEX</p>
+              <h2 id="overlayTitle">Ready to Play?</h2>
+              <p id="overlayText">Enter your name and start your neon adventure.</p>
+
+              <input
+                type="text"
+                id="playerName"
+                maxlength="15"
+                placeholder="Enter your player name"
+                autocomplete="off"
+              >
+
+              <button class="primary-btn" id="startBtn">
+                ▶ Start Game
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="game-actions">
+          <button class="action-btn" id="pauseBtn">Ⅱ Pause</button>
+          <button class="action-btn" id="restartBtn">↻ Restart</button>
+          <button class="action-btn" id="soundBtn">♫ Sound: ON</button>
+        </div>
+
+      </div>
+
+      <aside class="side-panel">
+
+        <div class="glass-card">
+          <p class="panel-label">GAME SETTINGS</p>
+
+          <label for="difficulty">Difficulty Level</label>
+          <select id="difficulty">
+            <option value="easy">Easy</option>
+            <option value="medium" selected>Medium</option>
+            <option value="hard">Hard</option>
+          </select>
+
+          <label for="skinSelect" class="skin-label">Snake Skin</label>
+          <select id="skinSelect">
+            <option value="mint">Neon Mint</option>
+            <option value="purple">Purple Dream</option>
+            <option value="blue">Cyber Blue</option>
+            <option value="pink">Pink Glow</option>
+            <option value="gold">Golden Star</option>
+          </select>
+
+          <div class="divider"></div>
+
+          <p class="panel-label">HOW TO PLAY</p>
+
+          <div class="instruction"><span>↑</span> Move Up</div>
+          <div class="instruction"><span>↓</span> Move Down</div>
+          <div class="instruction"><span>←</span> Move Left</div>
+          <div class="instruction"><span>→</span> Move Right</div>
+
+          <p class="keyboard-note">W A S D keys also supported</p>
+        </div>
+
+        <div class="glass-card bonus-card">
+          <div class="tip-icon">⭐</div>
+          <h3>Bonus Food</h3>
+          <p>Look out for special glowing food! Collect it before it disappears to earn <strong>50 bonus points.</strong></p>
+        </div>
+
+        <div class="glass-card leaderboard-card">
+          <p class="panel-label">🏆 TOP 5 PLAYERS</p>
+          <div id="leaderboard">
+            <p class="empty-board">No scores yet. Be the first!</p>
+          </div>
+        </div>
+
+      </aside>
+
+    </section>
+
+    <section class="mobile-controls">
+      <p>TOUCH CONTROLS</p>
+      <div class="control-grid">
+        <button class="direction up" data-dir="up">↑</button>
+        <button class="direction left" data-dir="left">←</button>
+        <button class="direction down" data-dir="down">↓</button>
+        <button class="direction right" data-dir="right">→</button>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2026 SnakeX Arcade <span>•</span> Built with 💜 and JavaScript</p>
+    </footer>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
